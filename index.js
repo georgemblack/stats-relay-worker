@@ -42,7 +42,7 @@ async function handleEvent(event) {
   }
 
   // build document
-  const doc = {
+  const document = {
     hostname: payload.hostname,
     pathname: payload.pathname,
     windowInnerWidth: payload.windowInnerWidth,
@@ -52,16 +52,16 @@ async function handleEvent(event) {
   };
 
   if (request.headers.get("user-agent")) {
-    doc.userAgent = request.headers.get("user-agent");
+    document.userAgent = request.headers.get("user-agent");
   }
   if (payload.referrer) {
-    doc.referrer = payload.referrer;
+    document.referrer = payload.referrer;
   }
   if (request.cf.country) {
-    doc.countryCode = request.cf.country;
+    document.countryCode = request.cf.country;
   }
 
-  event.waitUntil(postToStatsCollector(firestoreDocument));
+  event.waitUntil(postToStatsCollector(document));
   return new Response("Thanks for visiting! :)", {
     headers: DEFAULT_HEADERS,
   });
