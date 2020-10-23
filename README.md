@@ -1,1 +1,1 @@
-# stats-relay-worker
+# Web Stats Cloudflare Worker

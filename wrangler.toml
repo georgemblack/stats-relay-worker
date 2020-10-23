@@ -1,0 +1,6 @@
+name = "web-stats"
+type = "webpack"
+account_id = "bc4564dd499c0a9b8a7bb79c9bd5ea6d"
+workers_dev = false
+route = "stats.george.black/*"
+zone_id = "ebe9a5c16eef3126e396dfcf329abf0b"
