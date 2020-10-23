@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "web-stats",
+  "name": "web-stats-relay",
   "author": "georgemblack <contact@george.black>",
   "license": "MIT",
   "main": "index.js",
@@ -10,8 +10,5 @@
   "devDependencies": {
     "prettier": "^2.0.5"
   },
-  "dependencies": {
-    "jsonwebtoken": "^8.5.1",
-    "uuid": "^8.3.1"
-  }
+  "dependencies": {}
 }
