@@ -68,7 +68,7 @@ async function handleEvent(event) {
 }
 
 async function postToStatsCollector(document) {
-  await fetch(STATS_COLLECTOR_ENDPOINT, {
+  await fetch(`${STATS_COLLECTOR_ENDPOINT}/stats, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${STATS_COLLECTOR_ACCESS_TOKEN}`,
