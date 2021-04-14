@@ -46,7 +46,7 @@ async function handleEvent(event) {
     hostname: payload.hostname,
     pathname: payload.pathname,
     windowInnerWidth: payload.windowInnerWidth,
-    timezone: payload.timezone,
+    timezone: request.cf.timezone,
     dataCenterCode: request.cf.colo,
     timestamp: new Date().toISOString(),
   };
@@ -61,10 +61,10 @@ async function handleEvent(event) {
     document.countryCode = request.cf.country;
   }
   if (request.cf.city) {
-    document.city = request.cf.city;
+    document.cityName = request.cf.city;
   }
   if (request.cf.continent) {
-    document.continent = request.cf.continent;
+    document.continentCode = request.cf.continent;
   }
   if (request.cf.latitude) {
     document.latitude = request.cf.latitude;
@@ -76,7 +76,7 @@ async function handleEvent(event) {
     document.postalCode = request.cf.postalCode;
   }
   if (request.cf.region) {
-    document.region = request.cf.region;
+    document.regionName = request.cf.region;
   }
   if (request.cf.regionCode) {
     document.regionCode = request.cf.regionCode;
@@ -107,8 +107,6 @@ function validRequestPayload(payload) {
     payload.pathname !== "" &&
     typeof payload.referrer === "string" &&
     typeof payload.windowInnerWidth === "number" &&
-    Number.isInteger(payload.windowInnerWidth) &&
-    typeof payload.timezone === "string" &&
-    payload.timezone !== ""
+    Number.isInteger(payload.windowInnerWidth)
   );
 }
