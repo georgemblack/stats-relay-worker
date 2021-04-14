@@ -60,6 +60,27 @@ async function handleEvent(event) {
   if (request.cf.country) {
     document.countryCode = request.cf.country;
   }
+  if (request.cf.city) {
+    document.city = request.cf.city;
+  }
+  if (request.cf.continent) {
+    document.continent = request.cf.continent;
+  }
+  if (request.cf.latitude) {
+    document.latitude = request.cf.latitude;
+  }
+  if (request.cf.longitude) {
+    document.longitude = request.cf.longitude;
+  }
+  if (request.cf.postalCode) {
+    document.postalCode = request.cf.postalCode;
+  }
+  if (request.cf.region) {
+    document.region = request.cf.region;
+  }
+  if (request.cf.regionCode) {
+    document.regionCode = request.cf.regionCode;
+  }
 
   event.waitUntil(postToStatsCollector(document));
   return new Response("Thanks for visiting! :)", {
